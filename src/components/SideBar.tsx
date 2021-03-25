@@ -14,8 +14,7 @@ interface GenreResponseProps{
 export function SideBar(props:any) {
 
   const setUpdatedId = props.setUpdatedId;
-
-  const [selectedGenreId, setSelectedGenreId] = useState(1)
+  const updatedId = props.updatedId;
 
   const [genres, setGenres] = useState<GenreResponseProps[]>([]);
   
@@ -26,7 +25,6 @@ export function SideBar(props:any) {
   }, []);
 
   function handleClickButton(id: number) {
-    setSelectedGenreId(id);
     setUpdatedId(id)
   }
 
@@ -42,7 +40,7 @@ export function SideBar(props:any) {
             title={genre.title}
             iconName={genre.name}
             onClick={() => handleClickButton(genre.id)}
-            selected={selectedGenreId === genre.id}
+            selected={updatedId === genre.id}
           />
         ))}
       </div>

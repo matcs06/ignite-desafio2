@@ -10,7 +10,7 @@ export function App() {
 
   return (
     <div style={{ display: 'flex', flexDirection: 'row' }}>      
-      <SideBar setUpdatedId={setSelectedGenreId}/>
+      <SideBar setUpdatedId={setSelectedGenreId} updatedId={selectedGenreId}/>
       <Content genreId={selectedGenreId}/>
     </div>
   )
